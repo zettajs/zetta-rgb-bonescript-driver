@@ -1,0 +1,16 @@
+{
+  "name": "zetta-rgb-bonescript-driver",
+  "version": "0.0.0",
+  "description": "RGB LED Driver for bonescript",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Matthew Dobson <@mdobs>",
+  "license": "MIT",
+  "dependencies": {
+    "zetta": "^0.3.0",
+    "zetta-auto-scout": "^0.2.0",
+    "bonescript": "0.2.4"
+  }
+}

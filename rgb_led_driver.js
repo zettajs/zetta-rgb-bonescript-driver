@@ -5,9 +5,9 @@ var bone = require('bonescript');
 var RGBLed = module.exports = function(opts) {
   Device.call(this);
   opts = opts || {};
-  this.rLed = opts.rLed || "P9_14";
-  this.gLed = opts.gLed || "P9_16";
-  this.bLed = opts.bLed || "P9_22";
+  this.rLed = opts.rLed || "P9_23";
+  this.gLed = opts.gLed || "P9_25";
+  this.bLed = opts.bLed || "P9_27";
   this.red = 0;
   this.blue = 0;
   this.green = 0;
@@ -16,9 +16,9 @@ var RGBLed = module.exports = function(opts) {
   this._blue = false;
 
   //Everything is off to start
-  bone.analogWrite(this.rLed, calculateColor(this.red));
-  bone.analogWrite(this.gLed, calculateColor(this.green));
-  bone.analogWrite(this.bLed, calculateColor(this.blue));
+  bone.digitalWrite(this.rLed, 0);
+  bone.digitalWrite(this.gLed, 0);
+  bone.digitalWrite(this.bLed, 0);
 };
 util.inherits(RGBLed, Device);
 
@@ -45,7 +45,7 @@ RGBLed.prototype.toggleRed = function(cb) {
     this.red = 0;
   }
 
-  bone.analogWrite(this.rLed, calculateColor(this.red));
+  bone.digitalWrite(this.rLed, this._red);
   if(cb) {
     cb();
   }
@@ -59,7 +59,7 @@ RGBLed.prototype.toggleBlue = function(cb) {
     this.blue = 0;
   }
   
-  bone.analogWrite(this.bLed, calculateColor(this.blue));
+  bone.digitalWrite(this.bLed, this._blue);
   if(cb) {
     cb();
   }
@@ -73,41 +73,10 @@ RGBLed.prototype.toggleGreen = function(cb) {
   } else {
     this.green = 0;
   }
-  bone.analogWrite(this.gLed, calculateColor(this.green));
+  bone.digitalWrite(this.gLed, this._green);
 
   if(cb) {
     cb();
   }
 };
-
-RGBLed.prototype.setColor = function(color, cb) {
-  var red = convertToInt(color.slice(1,3));
-  var green = convertToInt(color.slice(3, 5));
-  var blue = convertToInt(color.slice(5, 7));
-
-  var redCode = calculateColor(red);
-  var greenCode = calculateColor(green);
-  var blueCode = calculateColor(blue);
-
-  this.red = redCode;
-  this.green = greenCode;
-  this.blue = blueCode;
-
-  bone.analogWrite(this.rLed, redCode);
-  bone.analogWrite(this.bLed, greenCode);
-  bone.analogWrite(this.gLed, blueCode);
-  if(cb) {
-    cb();
-  }
-};
-
-function convertToInt(code) {
-  var buf = new Buffer(1);
-  buf.write(code, 0, 1, 'HEX');
-  return buf.readUInt8(0);
-}
-
-function calculateColor(color) {
-  return color / 255;
-}
 

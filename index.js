@@ -1,4 +1,8 @@
+var util = require('util');
 var AutoScout = require('zetta-auto-scout');
 var LED = require('./rgb_led_driver');
 
-module.exports = new AutoScout('led', LED);
+var BoneScout = module.exports = function(opts) {
+  AutoScout.call(this, 'led', LED, opts);
+};
+util.inherits(BoneScout, AutoScout);

@@ -15,6 +15,16 @@ var LED = require('zetta-rgb-bonescript-driver');
 zetta()
   .use(LED)
   .listen(1337)
+
+// or define custom pins
+
+var zetta = require('zetta');
+var LED = require('../index');
+
+zetta()
+  .use(LED, { rLed: 'P9_23', gLed: 'P9_25', bLed: 'P9_27' })
+  .listen(1337);
+
 ```
 
 ###Transitions

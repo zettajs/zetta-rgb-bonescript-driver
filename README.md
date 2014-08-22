@@ -27,6 +27,14 @@ zetta()
 
 ```
 
+### Hardware
+
+* [Beagle Bone](http://beagleboard.org/black)
+* [RGB LED](https://www.sparkfun.com/products/10820)
+* 56 Ohm Resistor x 3
+
+![Hookup Diagram](docs/hookup_diagram_bb.png)
+
 ###Transitions
 
 #####toggleRed
@@ -44,4 +52,3 @@ No arguments. Turns the blue led on or off. Depends on state.
 #####setColor
 
 Hex string color code. Sets led color based on string passed in.
-

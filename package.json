@@ -8,10 +8,9 @@
   },
   "author": "Matthew Dobson <@mdobs>",
   "license": "MIT",
-  "repository":"https://github.com/zettajs/zetta-rgb-bonescript-driver.git",
+  "repository": "https://github.com/zettajs/zetta-rgb-bonescript-driver.git",
   "dependencies": {
-    "zetta": "^0.3.0",
-    "zetta-auto-scout": "^0.2.0",
-    "bonescript": "0.2.4"
+    "bonescript": "^0.2.4",
+    "zetta-device": "^0.3.0"
   }
 }

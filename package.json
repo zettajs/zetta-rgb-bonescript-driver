@@ -11,6 +11,7 @@
   "repository": "https://github.com/zettajs/zetta-rgb-bonescript-driver.git",
   "dependencies": {
     "bonescript": "^0.2.4",
+    "zetta-auto-scout": "^0.5.0",
     "zetta-device": "^0.3.0"
   }
 }

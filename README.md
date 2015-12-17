@@ -1,12 +1,12 @@
-##Control an RGB LED using Zetta and bonescript!
+## Control an RGB LED using Zetta and bonescript!
 
-###Install
+### Install
 
 ```
 $> npm install zetta-rgb-bonescript-driver
 ```
 
-###Usage
+### Usage
 
 ```
 var zetta = require('zetta');
@@ -35,20 +35,20 @@ zetta()
 
 ![Hookup Diagram](docs/hookup_diagram_bb.png)
 
-###Transitions
+### Transitions
 
-#####toggleRed
+#### #toggleRed
 
 No arguments. Turns the red led on or off. Depends on state.
 
-#####toggleGreen
+##### toggleGreen
 
 No arguments. Turns the green led on or off. Depends on state.
 
-#####toggleBlue
+##### toggleBlue
 
 No arguments. Turns the blue led on or off. Depends on state.
 
-#####setColor
+##### setColor
 
 Hex string color code. Sets led color based on string passed in.

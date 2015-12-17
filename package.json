@@ -1,6 +1,6 @@
 {
   "name": "zetta-rgb-bonescript-driver",
-  "version": "0.7.1",
+  "version": "0.7.2",
   "description": "RGB LED Driver for bonescript",
   "main": "index.js",
   "scripts": {
